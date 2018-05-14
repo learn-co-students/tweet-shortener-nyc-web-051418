@@ -17,13 +17,14 @@ end
 
 
 def word_substituter(tweet)
-  tweet.split.map do |string|
-    if dictionary.keys.include?(string.downcase)
-      string = dictionary[string.downcase]
-    else
-      string
-    end
-  end.join(" ")
+
+    tweet.split(" ").map do |string|
+      if dictionary.keys.include?(string.downcase)
+        string = dictionary[string.downcase]
+      else
+        string
+  end
+end.join(" ")
 end
 
 def bulk_tweet_shortener(tweet)
